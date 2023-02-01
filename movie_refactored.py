@@ -19,3 +19,19 @@ def movie_rating():
         return "The value you've entered is invalid, please enter a digit value for your age (e.g. 12) and a realistic one!"
 print(movie_rating())
 
+
+def mvie_rtin():    # this second function includes a while loop that will continue to ask the user for an appropriate age until provided
+    while True:
+        age = input("How old are you? ")
+        if age.isdigit() and int(age) > 0 and int(age) < 117:
+            if int(age) >= 18:
+                return "You are old enough to buy tickets for any movie"
+            elif int(age) < 18 and int(age) >= 15:
+                return "You can buy tickets for films rated U, PG, 12 and 15"
+            elif int(age) < 15 and int(age) >= 12:
+                return "You can buy tickets for films rated U, PG, and 12"
+            else:
+                return "You can buy tickets for any U rated films, we advise adult supervision for PG rated films"
+        else:
+            print("Please enter valid age")
+print(mvie_rtin())
