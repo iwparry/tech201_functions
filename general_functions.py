@@ -52,7 +52,8 @@ def multi_args(*multiargs):    # * allows us to input as many arguments as we wi
     for arg in multiargs:      # Iterates over every argument we've put in the function
         print(arg)             # Prints each individual argument
 
-multi_args(1 , 2, "Three", [1, 2, "Three"], 4, 5, 6)
+multi_args(1 , 2, 3, 4, 5, 6)
+multi_args(7, 8, 9, 10)
 
 # Type Hints
 
