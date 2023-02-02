@@ -44,22 +44,26 @@ def divide(num1, num2) -> float:
 #         return "You have not selected a valid arithmetic operator. Please try again."
 #
 # print(calculator())
+
 def calc():      # includes a while loop that will continue to loop if the user doesn't input appropriate values
     while True:
-        num1 = input("Pick a number: ")
-        num2 = input("Pick a second number: ")
-        operator = input("Pick the operation you wish to perform (+, -, *, /): ")
-        if num1.isdigit() and num2.isdigit():    # if condition is met then the selected operator will be evaluated
-            if operator == '+':                  # if appropriate operator is inputted then corresponding function
-                return add(num1, num2)           # will execute
-            elif operator == '-':
-                return subtract(num1, num2)
-            elif operator == '*':
-                return multiply(num1, num2)
-            elif operator == '/':
-                return divide(num1, num2)
+        num1 = input("Pick a whole number: ")   # because the calculater only works for int data types at the moment
+        if num1.isdigit():
+            num2 = input("Pick a second whole number: ")   # because the calculator only works for int data types at the moment
+            if num2.isdigit():
+                operator = input("Please choose an operation to perform (+, -, *, /): ")
+                if operator == '+':            # user must choose operator as instructed in the prompt
+                    return add(num1, num2)     # if, elif statements determine if a valid operator is selected
+                elif operator == '-':          # then calls corresponding function
+                    return subtract(num1, num2)
+                elif operator == '*':
+                    return multiply(num1, num2)
+                elif operator == '/':
+                    return divide(num1, num2)
+                else:
+                    print("Please select a valid operator")  # restart the loop
             else:
-                print("Please select a valid operator")   # restart the loop
+                print("The value you've entered is invalid, please try again.") # restart the loop
         else:
-            print("The value you entered is invalid, please try again.")
+            print("The value you entered is invalid, please try again.")   # restart the loop
 print(calc())
